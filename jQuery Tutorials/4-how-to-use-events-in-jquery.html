@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4 How to Use Events in jQuery</title>
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>This is heading1</h1>
+                <p id="p1">Hover me!</p>
+                <p id="p2">Click me!</p>
+                <p id="p3">Double click me!</p>
+                <p id="p4">Leave me alone!</p>
+                <p>Press [enter]</p>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom Scripts -->
+    <script>
+        $(document).ready(function() {
+            /* EVENTS */
+            // Hover
+            $("#p1").hover(function() {
+                // Hide p1
+                $(this).hide();
+            });
+            // Click
+            $("#p2").click(function() {
+                // Hide p2
+                $(this).hide();
+            });
+            // Double Click
+            $("#p3").dblclick(function() {
+                // Hide p3
+                $(this).hide();
+            })
+            // Mouse Out
+            $("#p4").mouseout(function() {
+                // Hide p4
+                $(this).hide();
+            });
+
+            // Keypress
+            // Default value of menuTrigger is false
+            var menuTrigger = false;
+           // Define keypress function
+            $(document).keypress(function(e) {
+                // 13 triggers the [Enter] from keyboard
+                if(e.which == 13) {
+                    // If the menuTrigger is false
+                    if(menuTrigger == false) {
+                        // Fade In the nav tag
+                        $("nav").fadeIn(300);
+                        // Set menuTrigger to true
+                        menuTrigger = true;
+                    } else if(menuTrigger == true) {
+                        // Fade Out the nav tag
+                        $("nav").fadeOut(300);
+                        // Set menuTrigger to false
+                        menuTrigger = false;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>5 How to Make Elements Disappear in jQuery</title>
+	<link rel="stylesheet" href="css/5-how-to-make-elements-disappear-in-jquery.css">
+</head>
+<body>
+
+<header>
+	<img id="menu-toggle" src="img/menu.png">
+</header>
+
+<nav id="side-nav">
+	<ul>
+		<li><a class="active" href="#">Home</a></li>
+		<li><a href="#">My channel</a></li>
+		<li><a href="#">Trending</a></li>
+		<li><a href="#">Subscribtions</a></li>
+	</ul>
+	<ul>
+		<li><p>LIBRARY</p></li>
+		<li><a href="#">History</a></li>
+		<li><a href="#">Watch Later</a></li>
+		<li><a href="#">Purchases</a></li>
+		<li><a href="#">jQuery</a></li>
+	</ul>
+</nav>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function() {
+	$("#menu-toggle").click(function() {
+		/* Make elements appear and disappear */
+		/* // Hide
+		$("#side-nav").hide(function() {
+			alert("hide Event Listener");
+		});
+		// Show
+		$("#side-nav").show(function() {
+			alert("show Event Listener");
+		});
+		// Fade-in
+		$("#side-nav").fadeIn(300, function() {
+			alert("fadeIn Event Listener");
+		});
+		// Fade-out
+		$("#side-nav").fadeOut(300, function() {
+			alert("fadeOut Event Listener");
+		}); 
+		// Fade Toggle
+		$("#side-nav").fadeToggle(300, function() {
+			alert("fadeToggle Event Listener");
+		}); */
+		// Slide Toggle
+		$("#side-nav").slideToggle(300, function() {
+			direction: "left"
+		});
+		/* // Fade To
+		$("#side-nav").fadeTo(300, 0.5, function() {
+			alert("fadeTo Event Listener");
+		}); */
+	});
+});
+</script>
+
+</body>
+</html>
